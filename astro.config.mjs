@@ -8,8 +8,8 @@ export default defineConfig({
   base: '',
   integrations: [
     starlight({
-      title: 'Tep Worlds',
-      description: 'News, announcements, and stories from Tep Worlds community.',
+      title: 'TEP',
+      description: 'News, announcements, and stories from Urth, Valsora, The East Pacific.',
       logo: {
         src: './src/assets/logo.svg',
         replacesTitle: false,
