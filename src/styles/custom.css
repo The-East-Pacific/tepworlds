@@ -11,26 +11,21 @@
   --tep-muted:       #B8B0B6;
   --tep-dim:         #7A7077;
   
-  /* Font families - FINAL SYSTEM */
-  --font-display: 'Climate Crisis', display; /* TEP only - caps */
-  --font-stack:   'League Spartan', sans-serif; /* Urth / Valsora / The East Pacific stack - Black 900, sentence case */
-  --font-heading: 'Climate Crisis', display; /* H1-H3 */
-  --font-body:    'Sora', system-ui, sans-serif; /* paragraphs */
-  --font-alt:     'League Spartan', sans-serif; /* H4-H6, cards, nav */
+  --font-display: 'Climate Crisis', display;
+  --font-heading: 'League Spartan', sans-serif; /* Black 900 for all headings */
+  --font-body:    'Sora', system-ui, sans-serif;
+  --font-stack:   'League Spartan', sans-serif;
 }
 
-/* ===== Dark theme (default) ===== */
 :root {
   --sl-color-accent-low:    #4a4410;
   --sl-color-accent:        var(--tep-yellow);
   --sl-color-accent-high:   #f8ee5e;
-
   --sl-color-bg:            var(--tep-dark);
   --sl-color-bg-nav:        rgba(40, 31, 36, 0.8);
   --sl-color-bg-sidebar:    var(--tep-dark-deep);
   --sl-color-bg-inline-code:#3D3340;
   --sl-color-bg-accent:     rgba(245, 228, 35, 0.12);
-
   --sl-color-white:         var(--tep-light);
   --sl-color-gray-1:        #D8D2D6;
   --sl-color-gray-2:        var(--tep-muted);
@@ -38,24 +33,20 @@
   --sl-color-gray-5:        #2a2429;
   --sl-color-gray-6:        var(--tep-dark-deep);
   --sl-color-black:         var(--tep-dark-deep);
-
-  --sl-font: 'Sora', system-ui, sans-serif; /* paragraphs = Sora */
+  --sl-font: 'Sora', system-ui, sans-serif;
   --sl-font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 }
 
-/* ===== Light theme ===== */
 :root[data-theme='light'] {
   --sl-color-accent-low:    #fff8b8;
   --sl-color-accent:        #c8b91e;
   --sl-color-accent-high:   #8a7e0d;
-
   --sl-color-white:         #1a1418;
   --sl-color-bg:            #f8f6f0;
   --sl-color-bg-nav:        rgba(248, 246, 240, 0.9);
   --sl-color-bg-sidebar:    #efece4;
   --sl-color-bg-inline-code:#e8e4d8;
   --sl-color-bg-accent:     rgba(26, 111, 52, 0.12);
-
   --sl-color-gray-1:        #2a2429;
   --sl-color-gray-2:        #4a4046;
   --sl-color-gray-3:        #6a6066;
@@ -64,75 +55,70 @@
   --sl-color-black:         #1a1418;
 }
 
-/* ===== Headings - Climate Crisis ===== */
-.sl-markdown-content h1,
-.sl-markdown-content h2,
-.sl-markdown-content h3,
-.hero h1 {
+/* ===== MAIN SITE TITLES - Climate Crisis only ===== */
+.hero h1,
+.site-title,
+.tep-wordmark,
+.tepwiki {
   font-family: 'Climate Crisis', display !important;
   font-weight: 400 !important;
   letter-spacing: 0.03em;
   line-height: 0.9;
-  text-transform: none;
+  text-transform: uppercase; /* TEP is only caps */
 }
 
-/* H4-H6 - League Spartan Black for stack feel */
-.sl-markdown-content h4,
-.sl-markdown-content h5,
-.sl-markdown-content h6 {
-  font-family: 'League Spartan', sans-serif !important;
-  font-weight: 900 !important;
-  letter-spacing: 0.02em;
-  text-transform: none; /* sentence case */
+/* TEPwiki - TEP caps + wiki lower */
+.tepwiki span {
+  text-transform: lowercase;
 }
 
-/* TEP stays caps */
-.tep-wordmark {
-  font-family: 'Climate Crisis' !important;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-/* Subcommunities - League Spartan Black in sentence case */
+/* Sub-stack - League Spartan Black sentence case */
 .tep-stack {
   font-family: 'League Spartan', sans-serif !important;
   font-weight: 900 !important;
   letter-spacing: 0.08em;
   line-height: 0.95;
-  text-transform: none; /* Urth, Valsora, The East Pacific */
+  text-transform: none;
 }
 
-/* TEPwiki - TEP caps + wiki lower */
-.tepwiki {
-  font-family: 'Climate Crisis', display !important;
-  letter-spacing: 0.03em;
-}
-.tepwiki span {
-  text-transform: lowercase;
+/* ===== ALL HEADINGS - League Spartan Black ===== */
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.sl-markdown-content h4,
+.sl-markdown-content h5,
+.sl-markdown-content h6,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  font-family: 'League Spartan', sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  text-transform: none; /* sentence case */
 }
 
-/* Body text - Sora */
+/* Body - Sora */
 .sl-markdown-content p,
 .sl-markdown-content li,
-.sl-markdown-content td {
+.sl-markdown-content td,
+.post-content p {
   font-family: 'Sora', sans-serif;
 }
 
-.sl-markdown-content a:not(:hover) {
-  color: var(--tep-teal);
-}
-
+.sl-markdown-content a:not(:hover) { color: var(--tep-teal); }
 nav.sl-nav {
   background: rgba(40, 31, 36, 0.7);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(242, 242, 240, 0.06);
 }
-
 :root[data-theme='light'] nav.sl-nav {
   background: rgba(248, 246, 240, 0.8);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
-
 .card {
   background: var(--tep-dark-deep) !important;
   border: 1px solid rgba(242, 242, 240, 0.08) !important;
@@ -144,7 +130,6 @@ nav.sl-nav {
   transform: translateY(-3px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 60px rgba(245, 228, 35, 0.08) !important;
 }
-
 :root[data-theme='light'] .card {
   background: #ffffff !important;
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
@@ -154,76 +139,38 @@ nav.sl-nav {
   border-color: var(--tep-green) !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
 }
-
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--tep-dark-deep); }
 ::-webkit-scrollbar-thumb { background: #4a4046; border-radius: 5px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--tep-yellow); }
-
 :root[data-theme='light'] ::-webkit-scrollbar-track { background: #e8e4d8; }
 :root[data-theme='light'] ::-webkit-scrollbar-thumb { background: #b8b0a8; }
-
 ::selection { background: var(--tep-yellow); color: var(--tep-dark-deep); }
 :root[data-theme='light'] ::selection { background: var(--tep-green); color: white; }
-
-/* ===== Light theme fixes ===== */
 :root[data-theme='light'] .discord-widget {
   border-color: rgba(0, 0, 0, 0.12) !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
 }
-
 :root[data-theme='light'] .tep-footer {
   background: #efece4 !important;
   border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
-
-:root[data-theme='light'] .tep-footer-brand {
-  color: #1a1418 !important;
-}
-
-:root[data-theme='light'] .tep-footer-links a {
-  color: #4a4046 !important;
-}
-
-:root[data-theme='light'] .tep-footer-links a:hover {
-  color: var(--tep-green) !important;
-}
-
-:root[data-theme='light'] .tep-footer-copy {
-  color: #6a6066 !important;
-}
-
+:root[data-theme='light'] .tep-footer-brand { color: #1a1418 !important; }
+:root[data-theme='light'] .tep-footer-links a { color: #4a4046 !important; }
+:root[data-theme='light'] .tep-footer-links a:hover { color: var(--tep-green) !important; }
+:root[data-theme='light'] .tep-footer-copy { color: #6a6066 !important; }
 :root[data-theme='light'] .forum-feed {
   background: #ffffff !important;
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
 }
-
-:root[data-theme='light'] .forum-feed li {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
-}
-
-:root[data-theme='light'] .forum-feed li:hover {
-  background: #f8f6f0 !important;
-}
-
-:root[data-theme='light'] .forum-feed a {
-  color: #1a1418 !important;
-}
-
-:root[data-theme='light'] .forum-feed a:hover {
-  color: var(--tep-green) !important;
-}
-
+:root[data-theme='light'] .forum-feed li { border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important; }
+:root[data-theme='light'] .forum-feed li:hover { background: #f8f6f0 !important; }
+:root[data-theme='light'] .forum-feed a { color: #1a1418 !important; }
+:root[data-theme='light'] .forum-feed a:hover { color: var(--tep-green) !important; }
 :root[data-theme='light'] .forum-meta,
-:root[data-theme='light'] .forum-empty {
-  color: #6a6066 !important;
-}
-
-:root[data-theme='light'] .forum-empty a {
-  color: var(--tep-green) !important;
-}
-
+:root[data-theme='light'] .forum-empty { color: #6a6066 !important; }
+:root[data-theme='light'] .forum-empty a { color: var(--tep-green) !important; }
 :root[data-theme='light'] .DocSearch-Button,
 :root[data-theme='light'] .search-input,
 :root[data-theme='light'] site-search button,
@@ -233,8 +180,6 @@ nav.sl-nav {
   color: #1a1418 !important;
   border: 1px solid rgba(0, 0, 0, 0.12) !important;
 }
-
-/* ===== Blog post content - Sora for paragraphs ===== */
 .post-content {
   font-family: 'Sora', system-ui, sans-serif;
   font-size: 1.0625rem;
@@ -243,48 +188,15 @@ nav.sl-nav {
   max-width: 720px;
   margin: 0 auto;
 }
-
-:root[data-theme='light'] .post-content {
-  color: #1a1418;
-}
-
-.post-content h1,
-.post-content h2,
-.post-content h3 {
-  font-family: 'Climate Crisis', display;
-  font-weight: 400;
-  letter-spacing: 0.03em;
-  line-height: 0.9;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-.post-content h4,
-.post-content h5,
-.post-content h6 {
-  font-family: 'League Spartan', sans-serif;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-}
-
-.post-content p {
-  margin: 1.25rem 0;
-  font-family: 'Sora', sans-serif;
-}
-
+:root[data-theme='light'] .post-content { color: #1a1418; }
+.post-content p { margin: 1.25rem 0; }
 .post-content a:not(.discuss-link) {
   color: var(--tep-teal);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
-  transition: color 0.2s;
 }
-
-.post-content a:not(.discuss-link):hover {
-  color: var(--tep-yellow);
-}
-
-/* ===== "Discuss this on the forum" button ===== */
+.post-content a:not(.discuss-link):hover { color: var(--tep-yellow); }
 .post-content p:has(a[href*="forum.theeastpacific.com"]) {
   display: inline-flex !important;
   align-items: center;
@@ -306,17 +218,14 @@ nav.sl-nav {
   padding-top: 2rem !important;
   position: relative;
 }
-
 :root[data-theme='light'] .post-content p:has(a[href*="forum.theeastpacific.com"]) {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
-
 .post-content p:has(a[href*="forum.theeastpacific.com"]):hover {
   background: var(--tep-green-light) !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
-
 .post-content p:has(a[href*="forum.theeastpacific.com"]) a {
   color: var(--tep-light) !important;
   text-decoration: none !important;
@@ -326,7 +235,6 @@ nav.sl-nav {
   background: none !important;
   box-shadow: none !important;
 }
-
 :root[data-theme='light'] .post-content p:has(a[href*="forum.theeastpacific.com"]) a {
   color: #ffffff !important;
 }
